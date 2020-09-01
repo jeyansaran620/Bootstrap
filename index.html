@@ -30,7 +30,7 @@
            <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
           </ul>
           <span class="navbar-text">
-              <a data-toggle="modal" data-target="#loginModal">
+              <a class="loginButton">
                   <span class="fa fa-sign-in"></span> Login
               </a>
           </span>
@@ -173,8 +173,7 @@
                     <img src="img/logo.png" class="img-fluid">
                   </div>
                   <div class="col-12 col-sm-3 mt-5 mt-sm-0 align-self-center">
-                    <a type="button" class="btn btn-block nav-link btn-warning" 
-                    data-toggle="modal" data-target="#reserveModal" href="/#reserve">
+                    <a type="button" class="btn btn-block nav-link btn-warning reserveButton">
                         <b>Reserve Table</b>
                     </a>
                   </div>   
@@ -398,8 +397,15 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("#mycarousel").carousel({ interval: 100});
-            
+            $("#mycarousel").carousel({ interval: 2000});
+
+            $(".loginButton").click(function(){
+                    $('#loginModal').modal('toggle');
+            });
+            $(".reserveButton").click(function(){
+                console.log("dd")
+                    $('#reserveModal').modal('toggle');
+            });
             $("#carouselButton").click(function(){
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
                     $("#mycarousel").carousel('pause');
